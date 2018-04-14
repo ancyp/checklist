@@ -17,6 +17,8 @@
   color:white;
   font-family: 'Montserrat', sans-serif;
   font-size: 450%;
+  align-items: center;
+  text-align: center
 }
 
 .options{
@@ -26,10 +28,15 @@
 }
 
 .options .button{
-  width: 50%;
+  width: 40%;
   height: 100px;
-  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200%;
+  background-color: gray;
+  border-color: transparent;
   color: snow;
+  margin: 5%;
+  border-radius: 10%;
 }
 
 .item {
