@@ -8,25 +8,61 @@ $(document).ready(function () {
         $(this).carousel('next');
     });
 
-    addQuestions();
+    var getQuestionsURL = "https://25380aa8-6988-41de-a143-e52a18c3b282.mock.pstmn.io/q"
+    var jqxhr = $.getJSON(getQuestionsURL, function (data) {
+        var questions = [];
+        setTitle(data.name);
+        addItemsToCheckList(data.baseActions);
+        addQuestions(data.allQuestions, flattenAnswers(data.allAnswers));
+    })
+        .fail(function () {
+            alert("error");
+        });
 
     $(".button").click(function () {
         $('#myCarousel').carousel('next');
 
     });
 
+
 });
 
+function flattenAnswers(arr) {
+    var map = {};
 
-function addQuestions() {
+    for (var index in arr) {
+        map[arr[index].id] = { "name": arr[index].name, "actions": arr[index].actions };
+    }
+    return map;
+}
+
+function addItemsToCheckList(itemsList) {
+    var checkList = document.getElementById("check-list");
+    for (var item in itemsList) {
+        var litem = document.createElement("li");
+        litem.classList.add("list-group-item");
+        litem.appendChild(document.createTextNode(itemsList[item]));
+        checkList.appendChild(litem);
+    }
+}
+
+function setTitle(titleText) {
+    $("#question-title").html(titleText);
+}
+
+function addQuestions(questionList, answersMap) {
     var carousel = document.getElementsByClassName("carousel-inner")[0];
-    carousel.appendChild(makeQuestionDiv(0));
-    carousel.appendChild(makeQuestionDiv(1));
-    carousel.appendChild(makeQuestionDiv(2));
-    carousel.appendChild(makeQuestionDiv(3));
+
+    for (var question in questionList) {
+        var itemDiv = makeQuestionDiv(questionList[question], answersMap);
+        if (question == 0) {
+            itemDiv.classList.add("active");
+            console.log(itemDiv.classList);
+        }
+        carousel.appendChild(itemDiv);
+    }
 
     // carousel.childNodes[0].classList.add["active"];
-
 
     var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
 
@@ -48,11 +84,14 @@ function makeIndicatorElement(index) {
     return indicatorElement;
 }
 
-function makeQuestionDiv(question_obj) {
+function makeQuestionDiv(question_obj, answersMap) {
     var containerDiv = document.createElement("div");
-    containerDiv.appendChild(makeQuestionSpan("This is a question a really long question. Does it take up multiple lines or does it go off the page"));
-    containerDiv.appendChild(makeOptionsRow(["option1", "option2", "option3", "option4"]));
-
+    containerDiv.appendChild(makeQuestionSpan(question_obj.name));
+    options = []
+    for (var index = 0; index < question_obj.answerIDs.length; index++) {
+        options.push(answersMap[question_obj.answerIDs[index]]);
+    }
+    containerDiv.appendChild(makeOptionsRow(options));
 
     var carouselContent = document.createElement("div");
     carouselContent.classList.add("carousel-content");
@@ -61,9 +100,7 @@ function makeQuestionDiv(question_obj) {
 
     var itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
-    if (question_obj === 0) {
-        itemDiv.classList.add("active");
-    }
+    
     itemDiv.appendChild(carouselContent);
 
     return itemDiv;
@@ -83,18 +120,18 @@ function makeOptionsRow(options) {
     var optionsRow = document.createElement("div");
     optionsRow.classList.add("options");
     optionsRow.classList.add("row");
-    optionsRow.appendChild(makeOptionsButton(options[0]));
-    optionsRow.appendChild(makeOptionsButton(options[1]));
-    optionsRow.appendChild(makeOptionsButton(options[2]));
-    optionsRow.appendChild(makeOptionsButton(options[3]));
 
+    for (var index = 0; index < options.length; index++) {
+        optionsRow.appendChild(makeOptionsButton(options[index]));
+
+    }
     return optionsRow;
 }
 
-function makeOptionsButton(optionText) {
-
+function makeOptionsButton(option) {
+    console.log("option " + option);
     var newButton = document.createElement("button");
-    newButton.appendChild(document.createTextNode(optionText));
+    newButton.appendChild(document.createTextNode(option.name));
     newButton.classList.add("col-md-1");
     newButton.classList.add("button");
 

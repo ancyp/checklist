@@ -54,6 +54,21 @@
   height: 100%;
   align-items: center;
   margin-left: 5%;
-  margin-right: 5%;
+  margin-right: 1%;
   margin-top: 5%;
+}
+
+#question-title {
+  text-align: center;
+  color: snow;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 400%;  
+}
+
+#check-list-div {
+  overflow: auto;
+  margin-right: 2%;
+  margin-top: 5%;
+  max-height: 700px;
+  height: 100%;
 }
