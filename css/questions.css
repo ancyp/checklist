@@ -1,16 +1,52 @@
-.body {
-    background-color: #333333;
-  }
+#bod {
+  background-color: #333333;
+  min-height: 100%;
+  height: 100%;
+  align-items: center;
+}
   
-  .carousel-content {
-      color:black;
-      display:flex;
-      align-items:center;
-  }
-  
-  #text-carousel {
-    width: 100%;
-    height: auto;
-    padding: 50px;
-  }
-          
+.carousel-content {
+    display:flex;
+    align-items:center;
+}
+
+.carousel-indicators {
+  margin-bottom: 0px;
+}
+.question {
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 450%;
+}
+
+.options{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.options .button{
+  width: 50%;
+  height: 100px;
+  background-color: transparent;
+  color: snow;
+}
+
+.item {
+  height: 100%;
+}
+
+
+#text-carousel {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+
+#myCarousel {
+  height: 100%;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
