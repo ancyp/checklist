@@ -19,13 +19,13 @@ $(document).ready(function () {
             alert("error");
         });
 
-    $(".button").click(function () {
-        $('#myCarousel').carousel('next');
-
-    });
-
-
+       
 });
+
+function addFromButtonToChecklist(){
+    var storedArray = this.getAttribute('data-action').split(",");
+    addItemsToCheckList(storedArray);
+}
 
 function flattenAnswers(arr) {
     var map = {};
@@ -134,6 +134,14 @@ function makeOptionsButton(option) {
     newButton.appendChild(document.createTextNode(option.name));
     newButton.classList.add("col-md-1");
     newButton.classList.add("button");
+
+    var actions = [];
+    for (var index = 0; index < option.actions.length; index++) {
+        actions.push(option.actions[index]);
+    }
+
+    newButton.setAttribute('data-action', actions);
+    newButton.onclick=addFromButtonToChecklist;
 
     return newButton;
 }
