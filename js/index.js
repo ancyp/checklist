@@ -48,7 +48,7 @@ function addQuestions(questionList) {
 function makeQuestionRow(question) {
 
     var row = document.createElement("div");
-    row.setAttribute("class", "row small-padding-bg");
+    row.setAttribute("class", "row question-row");
 
     var title = document.createElement("h3");
     title.appendChild(document.createTextNode(question.name));
@@ -57,7 +57,7 @@ function makeQuestionRow(question) {
     titleDiv.setAttribute("class", "col-lg-5 col-md-5 col-sm-5 col-xs-5 customs-p");
 
     var viewLink = document.createElement("a");
-    viewLink.setAttribute("class", "btn_orange medium customs-margin");
+    viewLink.setAttribute("class", "medium customs-margin");
     viewLink.appendChild(document.createTextNode("view"));
     viewLink.setAttribute("href", "questions.html?_id="+question.id);
 
