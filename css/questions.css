@@ -4,7 +4,7 @@
   height: 100%;
   align-items: center;
 }
-  
+
 .container-full {
   margin-top: 5%;
 }
@@ -105,7 +105,7 @@
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #b90504;
+  color: #ffffff;
   font-weight: 600;
   font-family: sans-serif;
 }
@@ -115,14 +115,14 @@
 }
 
 .navbar-default .navbar-nav>li>a:focus {
-  color: #b90504;
+  color: #ffffff;
 }
 
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
   color: white;
-  background-color: #b90504;
+  background-color: #000000;
 }
 
 
