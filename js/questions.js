@@ -14,7 +14,7 @@ $(document).ready(function () {
         var questions = [];
         setTitle(data.name);
         addItemsToCheckList(data.baseActions);
-        addQuestions(data.allQuestions, flattenAnswers(data.allAnswers));
+        addQuestions(getQuestions(data), flattenAnswers(data.allAnswers));
     })
         .fail(function () {
             alert("error");
@@ -30,9 +30,27 @@ function addFromButtonToChecklist() {
     addItemsToCheckList(storedArray);
 }
 
-function flattenQuestions(arr) {
 
+function flattenQuestions(arr) {
+    var map = {};
+    for (var index in arr) {
+        map[arr[index].id] = arr[index];
+    }
+    return map;
 }
+
+
+function getQuestions(data) {
+    var map = flattenQuestions(data.allQuestions);
+    var ques = [];
+    var arr = data.baseQuestionIDs
+    for (var index in arr) {
+        ques.push(map[arr[index]]);
+    }
+    console.log(ques);
+    return ques;
+}
+
 function flattenAnswers(arr) {
     var map = {};
 
@@ -48,9 +66,6 @@ function addItemsToCheckList(itemsList) {
         var litem = document.createElement("li");
         litem.classList.add("list-group-item");
         litem.classList.add("fade")
-        // setTimeout(function() {
-        //     litem.classList = 'list-group-item fade li-show';
-        //   }, 10)
         litem.appendChild(createCheckbox(itemsList[item]));
         litem.appendChild(document.createTextNode(itemsList[item]))
         checkList.appendChild(litem);
@@ -69,22 +84,16 @@ function setTitle(titleText) {
 
 function addQuestions(questionList, answersMap) {
     var carousel = document.getElementsByClassName("carousel-inner")[0];
+    var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
 
     for (var question in questionList) {
         var itemDiv = makeQuestionDiv(questionList[question], answersMap);
         if (question == 0) {
             itemDiv.classList.add("active");
-            console.log(itemDiv.classList);
         }
         carousel.appendChild(itemDiv);
+        carouselIndicator.appendChild(makeIndicatorElement(question));
     }
-
-    var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
-
-    carouselIndicator.appendChild(makeIndicatorElement(0));
-    carouselIndicator.appendChild(makeIndicatorElement(1));
-    carouselIndicator.appendChild(makeIndicatorElement(2));
-    carouselIndicator.appendChild(makeIndicatorElement(3));
 }
 
 function makeIndicatorElement(index) {
@@ -92,7 +101,7 @@ function makeIndicatorElement(index) {
     //todo: don't change div name!
     indicatorElement.setAttribute("data-target", "#myCarousel");
     indicatorElement.setAttribute("data-slide-to", index.toString());
-    if (index === 0) {
+    if (index == 0) {
         indicatorElement.classList.add("active");
     }
 
@@ -144,7 +153,6 @@ function makeOptionsRow(options) {
 }
 
 function makeOptionsButton(option) {
-    console.log("option " + option);
     var newButton = document.createElement("button");
     newButton.appendChild(document.createTextNode(option.name));
     newButton.classList.add("col-md-1");

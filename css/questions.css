@@ -77,7 +77,7 @@
   background-color: slateblue;
 }
 
-.fade{
+.fade {
   transition: all 0.4s ease-out;
   opacity: 1;
   -webkit-transition: fadeInFromNone .15s linear;
