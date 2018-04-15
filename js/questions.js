@@ -159,6 +159,7 @@ function makeIndicatorElement(index) {
 
 function makeQuestionDiv(question_obj, answersMap) {
     var containerDiv = document.createElement("div");
+    containerDiv.classList.add("container-div");
     containerDiv.appendChild(makeQuestionSpan(question_obj.name));
     options = []
     for (var index = 0; index < question_obj.answerIDs.length; index++) {
@@ -204,7 +205,7 @@ function makeOptionsRow(options) {
 function makeOptionsButton(option) {
     var newButton = document.createElement("button");
     newButton.appendChild(document.createTextNode(option.name));
-    newButton.classList.add("col-md-1");
+    // newButton.classList.add("col-md-1");
     newButton.classList.add("button");
 
     var actions = [];

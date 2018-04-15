@@ -47,7 +47,10 @@ function addQuestions(questionList) {
 
 function makeQuestionRow(question) {
 
+    var a = document.createElement("a");
+
     var row = document.createElement("div");
+
     row.setAttribute("class", "row question-row");
 
     var title = document.createElement("h3");
@@ -68,6 +71,7 @@ function makeQuestionRow(question) {
     titleDiv.appendChild(title);
     row.appendChild(titleDiv);
     row.appendChild(linkDiv);
+     a.appendChild(row);
     return row;
 }
 

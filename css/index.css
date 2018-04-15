@@ -2,7 +2,12 @@ body {
     font-family: 'Roboto';font-size: 16px;
     background-color:#ededed;
 }
-
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+  color: white;
+  background-color: #b90504;
+}
 /* top section */
 .top-section {
     padding: 10px 0 0;
@@ -397,7 +402,7 @@ p {
   
 
   .navbar-default .navbar-nav>li>a {
-    color: #b90504;
+    color: #ffffff;
     font-weight: 600;
     font-family: sans-serif;
   }
@@ -407,14 +412,14 @@ p {
   }
 
   .navbar-default .navbar-nav>li>a:focus {
-    color: #b90504;
+    color: #ffffff;
   }
 
   .navbar-default .navbar-nav>.active>a,
   .navbar-default .navbar-nav>.active>a:hover,
   .navbar-default .navbar-nav>.active>a:focus {
     color: white;
-    background-color: #b90504;
+    background-color: #000000;
   }
 /* Carousel Styles */
 
