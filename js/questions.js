@@ -9,8 +9,10 @@ $(document).ready(function () {
     $('#myCarousel').bind('mousewheel', function () {
         $(this).carousel('next');
     });
+    var tech = getUrlParameter('_id');
 
-    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq"
+    
+    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq?_id="+tech
     var jqxhr = $.getJSON(getQuestionsURL, function (data) {
         var questions = [];
         dat = data;
@@ -27,6 +29,21 @@ $(document).ready(function () {
 
 
 });
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
 
 function addFromButtonToChecklist() {
     $('#myCarousel').carousel('next');
@@ -198,7 +215,6 @@ function makeOptionsButton(option) {
     for (var index = 0; index < option.resultingQuestionIDs.length; index++) {
         ques.push(option.resultingQuestionIDs[index]);
     }
-    console.log(ques);
 
     newButton.setAttribute('data-action', actions);
     newButton.setAttribute('data-questions', ques);

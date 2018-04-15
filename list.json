@@ -1,0 +1,520 @@
+[{
+    "_id" : "1",
+    "name" : "Packing for Vacation 1",
+    "allQuestions" :
+    [
+        {
+            "id" : 1,
+            "name" : "How does the weather look?",
+            "answerIDs" : 
+            [
+                1, 2, 3
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Is it near a beach?",
+            "answerIDs" :
+            [
+                4, 5
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Is it light or heavy rain?",
+            "answerIDs" :
+            [
+                6, 7
+            ]
+        }
+    ],
+    "baseQuestionIDs":
+    [
+        1, 2
+    ],
+    "allAnswers":
+    [
+        {
+            "id" : 1,
+            "name" : "Sunny",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Sunglasses",
+                "Hat"
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Rainy",
+            "resultingQuestionIDs" : [3, 2],
+            "actions" : 
+            [
+                "Umbrella"
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Snow",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Boots"
+            ]
+        },
+        {
+            "id" : 4,
+            "name" : "Yes",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Swim gear",
+                "Beach towel"
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "No",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 6,
+            "name" : "Light",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 7,
+            "name" : "Heavy",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Poncho"
+            ]
+        }
+    ],
+    "baseActions":
+    [
+        "Toothbrush",
+        "Clothing",
+        "Water bottle"
+    ]
+},
+
+
+{
+    "_id" : "5",
+    "name" : "Packing for Vacation 5",
+    "allQuestions" :
+    [
+        {
+            "id" : 1,
+            "name" : "How does the weather look?",
+            "answerIDs" : 
+            [
+                1, 2, 3
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Is it near a beach?",
+            "answerIDs" :
+            [
+                4, 5
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Is it light or heavy rain?",
+            "answerIDs" :
+            [
+                6, 7
+            ]
+        }
+    ],
+    "baseQuestionIDs":
+    [
+        1, 2
+    ],
+    "allAnswers":
+    [
+        {
+            "id" : 1,
+            "name" : "Sunny",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Sunglasses",
+                "Hat"
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Rainy",
+            "resultingQuestionIDs" : [3, 2],
+            "actions" : 
+            [
+                "Umbrella"
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Snow",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Boots"
+            ]
+        },
+        {
+            "id" : 4,
+            "name" : "Yes",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Swim gear",
+                "Beach towel"
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "No",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 6,
+            "name" : "Light",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 7,
+            "name" : "Heavy",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Poncho"
+            ]
+        }
+    ],
+    "baseActions":
+    [
+        "Toothbrush",
+        "Clothing",
+        "Water bottle"
+    ]
+},
+
+{
+    "_id" : "2",
+    "name" : "Packing for Vacation 2",
+    "allQuestions" :
+    [
+        {
+            "id" : 1,
+            "name" : "How does the weather look?",
+            "answerIDs" : 
+            [
+                1, 2, 3
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Is it near a beach?",
+            "answerIDs" :
+            [
+                4, 5
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Is it light or heavy rain?",
+            "answerIDs" :
+            [
+                6, 7
+            ]
+        }
+    ],
+    "baseQuestionIDs":
+    [
+        1, 2
+    ],
+    "allAnswers":
+    [
+        {
+            "id" : 1,
+            "name" : "Sunny",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Sunglasses",
+                "Hat"
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Rainy",
+            "resultingQuestionIDs" : [3, 2],
+            "actions" : 
+            [
+                "Umbrella"
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Snow",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Boots"
+            ]
+        },
+        {
+            "id" : 4,
+            "name" : "Yes",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Swim gear",
+                "Beach towel"
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "No",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 6,
+            "name" : "Light",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 7,
+            "name" : "Heavy",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Poncho"
+            ]
+        }
+    ],
+    "baseActions":
+    [
+        "Toothbrush",
+        "Clothing",
+        "Water bottle"
+    ]
+},
+
+{
+    "_id" : "3",
+    "name" : "Packing for Vacation 3",
+    "allQuestions" :
+    [
+        {
+            "id" : 1,
+            "name" : "How does the weather look?",
+            "answerIDs" : 
+            [
+                1, 2, 3
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Is it near a beach?",
+            "answerIDs" :
+            [
+                4, 5
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Is it light or heavy rain?",
+            "answerIDs" :
+            [
+                6, 7
+            ]
+        }
+    ],
+    "baseQuestionIDs":
+    [
+        1, 2
+    ],
+    "allAnswers":
+    [
+        {
+            "id" : 1,
+            "name" : "Sunny",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Sunglasses",
+                "Hat"
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Rainy",
+            "resultingQuestionIDs" : [3, 2],
+            "actions" : 
+            [
+                "Umbrella"
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Snow",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Boots"
+            ]
+        },
+        {
+            "id" : 4,
+            "name" : "Yes",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Swim gear",
+                "Beach towel"
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "No",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 6,
+            "name" : "Light",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 7,
+            "name" : "Heavy",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Poncho"
+            ]
+        }
+    ],
+    "baseActions":
+    [
+        "Toothbrush",
+        "Clothing",
+        "Water bottle"
+    ]
+},
+
+{
+    "_id" : "4",
+    "name" : "Packing for Vacation 4",
+    "allQuestions" :
+    [
+        {
+            "id" : 1,
+            "name" : "How does the weather look?",
+            "answerIDs" : 
+            [
+                1, 2, 3
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Is it near a beach?",
+            "answerIDs" :
+            [
+                4, 5
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Is it light or heavy rain?",
+            "answerIDs" :
+            [
+                6, 7
+            ]
+        }
+    ],
+    "baseQuestionIDs":
+    [
+        1, 2
+    ],
+    "allAnswers":
+    [
+        {
+            "id" : 1,
+            "name" : "Sunny",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Sunglasses",
+                "Hat"
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "Rainy",
+            "resultingQuestionIDs" : [3, 2],
+            "actions" : 
+            [
+                "Umbrella"
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Snow",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Boots"
+            ]
+        },
+        {
+            "id" : 4,
+            "name" : "Yes",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Swim gear",
+                "Beach towel"
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "No",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 6,
+            "name" : "Light",
+            "resultingQuestionIDs" : [],
+            "actions" : []
+        },
+        {
+            "id" : 7,
+            "name" : "Heavy",
+            "resultingQuestionIDs" : [],
+            "actions" : 
+            [
+                "Poncho"
+            ]
+        }
+    ],
+    "baseActions":
+    [
+        "Toothbrush",
+        "Clothing",
+        "Water bottle"
+    ]
+}]

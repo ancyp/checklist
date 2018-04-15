@@ -66,6 +66,12 @@ body {
     margin-bottom: 0;
     margin-top: 0;
 }
+
+h3 {
+    font-family: "Amatic SC", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    
+}
 h2 span, h3 span, h4 span, h5 span, h6 span {
     color: #f7941d;
 }
