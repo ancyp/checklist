@@ -30,6 +30,9 @@ function addFromButtonToChecklist() {
     addItemsToCheckList(storedArray);
 }
 
+function flattenQuestions(arr) {
+
+}
 function flattenAnswers(arr) {
     var map = {};
 
@@ -44,15 +47,19 @@ function addItemsToCheckList(itemsList) {
     for (var item in itemsList) {
         var litem = document.createElement("li");
         litem.classList.add("list-group-item");
+        litem.classList.add("fade")
+        // setTimeout(function() {
+        //     litem.classList = 'list-group-item fade li-show';
+        //   }, 10)
         litem.appendChild(createCheckbox(itemsList[item]));
         litem.appendChild(document.createTextNode(itemsList[item]))
         checkList.appendChild(litem);
     }
 }
 
-function createCheckbox(text){
-    var checkbox=document.createElement("input");
-    checkbox.type="checkbox";
+function createCheckbox(text) {
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
     return checkbox;
 }
 
