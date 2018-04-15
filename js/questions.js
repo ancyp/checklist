@@ -17,6 +17,9 @@ $(document).ready(function () {
         setTitle(data.name);
         addItemsToCheckList(data.baseActions);
         addQuestions(getQuestions(data), flattenAnswers(data.allAnswers));
+
+        var indicatorElement = document.getElementsByTagName("li")[0];
+        indicatorElement.classList.add("active");
     })
         .fail(function () {
             alert("error");
@@ -39,13 +42,13 @@ function addFromButtonToChecklist() {
 }
 
 function appendQuestions(quesNumbers) {
-    
+
     for (var i = 0; i < quesNumbers.length; i++) {
 
     }
     var carousel = document.getElementsByClassName("carousel-inner")[0];
     var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
-    
+
     var map = flattenQuestions(dat.allQuestions);
     var answersMap = flattenAnswers(dat.allAnswers);
     var ques = [];
@@ -131,10 +134,6 @@ function makeIndicatorElement(index) {
     //todo: don't change div name!
     indicatorElement.setAttribute("data-target", "#myCarousel");
     indicatorElement.setAttribute("data-slide-to", index.toString());
-    if (index == 0) {
-        indicatorElement.classList.add("active");
-    }
-
     return indicatorElement;
 }
 
