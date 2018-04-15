@@ -56,8 +56,7 @@ function addFromButtonToChecklist() {
 
     if ($("#myCarousel .carousel-inner .item:last").hasClass("active")) {
         $('#myCarousel').remove();
-
-        $("#question-title").after("<h3 id='done-text'>Here's what you should do:</h2>");
+        $('#final').append("<br><br><br><br><br><br><br><h3 id='done-text'>Here's what you should do:</h3>");
     }
 }
 
