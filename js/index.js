@@ -59,7 +59,7 @@ function makeQuestionRow(question) {
     var viewLink = document.createElement("a");
     viewLink.setAttribute("class", "btn_orange medium customs-margin");
     viewLink.appendChild(document.createTextNode("view"));
-    viewLink.setAttribute("href", "/questions.html?_id="+question.id);
+    viewLink.setAttribute("href", "questions.html?_id="+question.id);
 
     var linkDiv =  document.createElement("div");
     linkDiv.setAttribute("class", "col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-right")
