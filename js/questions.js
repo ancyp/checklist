@@ -6,13 +6,10 @@ $(document).ready(function () {
         wrap: false
     });
 
-    $('#myCarousel').bind('mousewheel', function () {
-        $(this).carousel('next');
-    });
     var tech = getUrlParameter('_id');
 
-    
-    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq?_id="+tech
+
+    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq?_id=" + tech
     var jqxhr = $.getJSON(getQuestionsURL, function (data) {
         var questions = [];
         dat = data;
@@ -55,8 +52,13 @@ function addFromButtonToChecklist() {
         var storedArray = this.getAttribute('data-questions').split(",");
         appendQuestions(storedArray);
     }
-    this.classList="col-md-1 button button-clicked";
+    this.classList = "col-md-1 button button-clicked";
 
+    if ($("#myCarousel .carousel-inner .item:last").hasClass("active")) {
+        $('#myCarousel').remove();
+
+        $("#question-title").after("<h3 id='done-text'>Here's what you should do:</h2>");
+    }
 }
 
 function appendQuestions(quesNumbers) {
@@ -135,7 +137,7 @@ function setTitle(titleText) {
 
 function addQuestions(questionList, answersMap) {
     var carousel = document.getElementsByClassName("carousel-inner")[0];
-    var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
+    // var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
 
     for (var question in questionList) {
         var itemDiv = makeQuestionDiv(questionList[question], answersMap);
@@ -143,7 +145,7 @@ function addQuestions(questionList, answersMap) {
             itemDiv.classList.add("active");
         }
         carousel.appendChild(itemDiv);
-        carouselIndicator.appendChild(makeIndicatorElement(question));
+        // carouselIndicator.appendChild(makeIndicatorElement(question));
     }
 }
 
