@@ -6,13 +6,10 @@ $(document).ready(function () {
         wrap: false
     });
 
-    $('#myCarousel').bind('mousewheel', function () {
-        $(this).carousel('next');
-    });
     var tech = getUrlParameter('_id');
 
-    
-    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq?_id="+tech
+
+    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq?_id=" + tech
     var jqxhr = $.getJSON(getQuestionsURL, function (data) {
         var questions = [];
         dat = data;
@@ -55,8 +52,13 @@ function addFromButtonToChecklist() {
         var storedArray = this.getAttribute('data-questions').split(",");
         appendQuestions(storedArray);
     }
-    this.classList="col-md-1 button button-clicked";
+    this.classList = "col-md-1 button button-clicked";
 
+    if ($("#myCarousel .carousel-inner .item:last").hasClass("active")) {
+        $('#myCarousel').remove();
+
+        $("#question-title").after("<h2 id='question-title'>YOU ARE DONE!</h2>");
+    }
 }
 
 function appendQuestions(quesNumbers) {
