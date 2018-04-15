@@ -1,19 +1,296 @@
 <!DOCTYPE html>
-<html lang="en">
+
+
+<html class=''>
 
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<link href="css/index.css" rel="stylesheet" id="bootstrap-css">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-	<script src="js/index.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+  <style class="cp-pen-styles">
+    body {
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      color: black;
+      background-color: #e8e8e8;
+    }
+
+    .btn {
+  display: inline-block;
+  background: #ffffff;
+  border: 0;
+  line-height: 2.5em;
+  padding: 15px 32px;
+  margin-bottom: 1em;
+  outline: none;
+  text-decoration: none;
+  color: #666;
+}
+.btn .arrow {
+  display: inline-block;
+  line-height: 2.5em;
+  text-align: center;
+  background: #333;
+  color: white;
+  font-size: 1em;
+  width: 2.5em;
+  -webkit-transition: margin 200ms;
+  transition: margin 200ms;
+  margin-left: .75em;
+}
+.btn:hover {
+  background: white;
+}
+.btn:hover .arrow {
+  margin-left: 1.25em;
+  background-color: #262626;
+}
+.btn:active {
+  background: #ccc;
+}
+.btn:active .arrow {
+  margin-left: 1.5em;
+}
+
+.btn-info .arrow {
+  background-color: indianred;
+}
+.btn-info:hover .arrow {
+  background-color: #c14e4e;
+}
+
+.btn-learn .arrow {
+  background-color: salmon;
+}
+.btn-learn:hover .arrow {
+  background-color: #f56d5e;
+}
+
+
+    .navbar-brand {
+      padding: 0px;
+    }
+
+    .navbar-brand>img {
+      height: 100%;
+      padding: 7px 15px;
+      width: auto;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+      color: #ffffff;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+      color: white;
+      background-color: #b90504;
+    }
+
+    #home,
+    #contact {
+      padding: 80px 25px;
+      background: url('img/background.png');
+      background-position: 50% 50%;
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-size: cover;
+      text-align: center;
+    }
+
+        .page-view {
+      min-height: 100vh;
+    }
+
+    .page-view h4 {
+      font-size: 1.6em;
+      margin-left: 10px;
+    }
+
+    .page-view h4>i {
+      vertical-align: middle;
+    }
+
+    .page-view h5 {
+      font-size: 1.2em;
+    }
+
+    .page-view a {
+      color: #b90504;
+    }
+
+    #skills,
+    #services,
+    #portfolio {
+      padding-top: 50px;
+    }
+
+    #about {
+      padding-top: 50px;
+    }
+
+    #portfolio {
+      padding-bottom: 50px;
+    }
+
+    .title {
+      padding-top: 1.8em;
+      font-size: 550%;
+      color: #000000;
+      font-style: bold;
+      font-family:  Helvetica, Arial, sans-serif;
+    }
+     .testimonial {
+      padding-top: 0 em;
+      font-size: 550%;
+      color: #000000;
+      font-style: bold;
+      font-family:  Helvetica, Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: black;
+    }
+
+   
+    .large-font {
+      font-size: 1.2em;
+    }
+
+    .page-title {
+      font-size: 2.6em;
+      font-family: Raleway, sans-serif;
+    }
+
+    .portfolio-title {
+      font-family: Raleway, sans-serif;
+      font-size: 2em;
+      color: #b90504;
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+
+    .red {
+      color: #b90504;
+    }
+
+    .container-fluid {
+      padding-top: 90px;
+    }
+
+    #services ul,
+    #skills ul {
+      width: auto;
+      display: inline-block;
+    }
+
+    #services ul>li,
+    #skills ul>li {
+      text-align: left;
+    }
+
+    .fa-pencil,
+    .fa-cogs,
+    .fa-code,
+    .fa-cubes,
+    .fa-dashboard,
+    .fa-certificate,
+    .fa-flask {
+      font-size: 2.5em;
+      color: black;
+    }
+
+    .fa-envelope:hover,
+    .fa-facebook:hover,
+    .fa-github:hover,
+    .fa-google-plus:hover,
+    .fa-linkedin:hover,
+    .fa-twitter:hover {
+      color: #777;
+    }
+
+    .fa-stack {
+      color: black;
+      font-size: 2em;
+    }
+
+    .bg-grey {
+      color: #333;
+    }
+
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    /* Tablets */
+
+    @media (max-width: 992px) {
+      .navbar ul li a {
+        font-size: .9em;
+        padding-left: 0;
+      }
+    }
+
+    /* Portrait phones and smaller */
+
+    @media (max-width: 480px) {
+      .navbar ul li a {
+        font-size: .9em;
+        padding-left: 0;
+      }
+      .navbar-brand>img {
+        height: auto;
+        padding: 7px 15px;
+        width: 200px;
+      }
+      
+      h1.title {
+        font-size: 1.8em;
+        padding-top: 1.6em;
+      }
+      h3.title {
+        font-size: 1.2em;
+      }
+      .container-fluid {
+        padding-top: 80px;
+      }
+      .fa-stack {
+        font-size: 1.3em;
+      }
+    }
+
+
+  </style>
 </head>
 
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio site of full stack web developer Bob Brady.  Services available to help you create a web app from design, style, code to cloud deploy.">
+    <title>Kintsugi</title>
+    <link rel="icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Raleway:400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  </head>
+
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header navbar-left">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-menu">
@@ -22,34 +299,101 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <img  src="img/logo.png" width = "100", height ="40" alt="logo" />
+            <img src="img/logo.png" alt="logo" />
           </a>
         </div>
         <div class="collapse navbar-collapse" id="site-menu">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="about.html">HOME</a>
+              <a href="guides.html">GUIDES</a>
             </li>
             <li>
-              <a href="about.html#contact">TESTIMONIALS</a>
+              <a href="#about">ABOUT</a>
+            </li>
+            <li>
+              <a href="#contact">TESTIMONIALS</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-	<section>
-		<br> <br>
-		<div class="container-full tb-padding">
-			<div class ="row">
-				<div class= "col-md-3"> </div>
-				<div id="questions-row" class="col-md-6">
+    <div id="home" class="container-fluid page-view">
+      <div class="row">
+        <div class="col-sm-12">
+        <br> <br>
+         <img src="img/logo_transparent.png" height = 250 width = 800 alt="logo" /> 
+         
+          <h4 class="title"><b>A place to go when you need a start</b></h4>
+          <br> <br>
+          <a href="index.html" class="btn btn-learn btn-lg">Get Your Start <span class="arrow">❯</span></a>
+        
+        </div>
+      </div>
+    </div>
 
-				</div>	
-			</div>
-		</div>
-		
-	</section>
+    <div id="about" class="container bg-grey page-view">
+      <h2 class="page-title text-center red">About</h2>
+      <div class="row">
+
+
+        <p class="large-font">
+        </p>
+
+      </div>
+    </div>
+
+
+    <div id="contact" class="container-fluid text-center bg-grey page-view">
+      <div style ="opacity: 60%" background="white">
+      <h2 class="testimonial">#im in kintsugi</h2>
+      <br>
+      <div class="row">
+        <div class="col-sm-12">
+            <a class="twitter-timeline"  href="https://twitter.com/hashtag/iminkintsugi" data-widget-id="985540291875819521">#iminkintsugi Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+  </body>
+
+  </html>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  <script>
+    $(document).ready(function () {
+
+      // Fix for "hamburger menu" not collapsing after a click on menu item
+      $("nav").find("li").on("click", "a", function () {
+        $('.navbar-collapse.in').collapse('hide');
+      });
+
+      // Add smooth scrolling to all nav links
+      $(".navbar a, footer a[href='#home']").on('click', function (event) {
+        // Don't scroll if on a mobile phone, it's too awkward
+        if (this.hash !== "" && $(window).width() > 480) {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+          // Store hash
+          var hash = this.hash;
+          // Scroll to hash tag in 700 ms
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 700, function () {
+            // Add hash (#) to URL when done scrolling
+            window.location.hash = hash;
+          });
+        }
+      });
+
+    });
+//# sourceURL=pen.js
+  </script>
 </body>
 
 </html>
