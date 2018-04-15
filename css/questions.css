@@ -72,3 +72,7 @@
   max-height: 700px;
   height: 100%;
 }
+
+.selected-answer {
+  background-color: slateblue;
+}

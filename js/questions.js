@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
     $('#myCarousel').carousel({
-        interval: false
+        interval: false,
+        wrap: false
     });
 
     $('#myCarousel').bind('mousewheel', function () {
@@ -19,10 +20,12 @@ $(document).ready(function () {
             alert("error");
         });
 
-       
+
 });
 
-function addFromButtonToChecklist(){
+function addFromButtonToChecklist() {
+    $('#myCarousel').carousel('next');
+    if (this.getAttribute('data-action') === "") { return; }
     var storedArray = this.getAttribute('data-action').split(",");
     addItemsToCheckList(storedArray);
 }
@@ -41,9 +44,16 @@ function addItemsToCheckList(itemsList) {
     for (var item in itemsList) {
         var litem = document.createElement("li");
         litem.classList.add("list-group-item");
-        litem.appendChild(document.createTextNode(itemsList[item]));
+        litem.appendChild(createCheckbox(itemsList[item]));
+        litem.appendChild(document.createTextNode(itemsList[item]))
         checkList.appendChild(litem);
     }
+}
+
+function createCheckbox(text){
+    var checkbox=document.createElement("input");
+    checkbox.type="checkbox";
+    return checkbox;
 }
 
 function setTitle(titleText) {
@@ -61,8 +71,6 @@ function addQuestions(questionList, answersMap) {
         }
         carousel.appendChild(itemDiv);
     }
-
-    // carousel.childNodes[0].classList.add["active"];
 
     var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
 
@@ -100,7 +108,7 @@ function makeQuestionDiv(question_obj, answersMap) {
 
     var itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
-    
+
     itemDiv.appendChild(carouselContent);
 
     return itemDiv;
@@ -141,7 +149,7 @@ function makeOptionsButton(option) {
     }
 
     newButton.setAttribute('data-action', actions);
-    newButton.onclick=addFromButtonToChecklist;
+    newButton.onclick = addFromButtonToChecklist;
 
     return newButton;
 }
