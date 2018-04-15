@@ -135,7 +135,7 @@ function setTitle(titleText) {
 
 function addQuestions(questionList, answersMap) {
     var carousel = document.getElementsByClassName("carousel-inner")[0];
-    var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
+    // var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
 
     for (var question in questionList) {
         var itemDiv = makeQuestionDiv(questionList[question], answersMap);
@@ -143,7 +143,7 @@ function addQuestions(questionList, answersMap) {
             itemDiv.classList.add("active");
         }
         carousel.appendChild(itemDiv);
-        carouselIndicator.appendChild(makeIndicatorElement(question));
+        // carouselIndicator.appendChild(makeIndicatorElement(question));
     }
 }
 
