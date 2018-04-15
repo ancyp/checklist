@@ -9,12 +9,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <script type="text/javascript" src="js/questions.js"></script>
     <link rel="stylesheet" href="css/questions.css">
 </head>
 
 <body id="bod">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header navbar-left">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="logo" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="site-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html#about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="index.html">VIEW</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container-full">
         <h2 id="question-title">Carousel Example</h2>
         <div id="myCarousel" class="carousel slide col-md-8" data-ride="carousel">
@@ -22,19 +47,19 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-            <!-- JS will add items here -->       
+                <!-- JS will add items here -->
             </div>
 
             <ol class="carousel-indicators">
-                
+
             </ol>
 
         </div>
 
         <div id="check-list-div" class="col-md-3">
-        		<ul class="list-group checked-list-box" id ="check-list">
-                </ul>
-            </div>
+            <ul class="list-group checked-list-box" id="check-list">
+            </ul>
+        </div>
     </div>
 </body>
 

@@ -38,6 +38,7 @@ function addFromButtonToChecklist() {
         var storedArray = this.getAttribute('data-questions').split(",");
         appendQuestions(storedArray);
     }
+    this.classList="col-md-1 button button-clicked";
 
 }
 

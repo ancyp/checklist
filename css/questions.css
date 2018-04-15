@@ -1,10 +1,14 @@
 #bod {
-  background-color: #333333;
+  background-color: #FCCE27;
   min-height: 100%;
   height: 100%;
   align-items: center;
 }
   
+.container-full {
+  margin-top: 5%;
+}
+
 .carousel-content {
     display:flex;
     align-items:center;
@@ -14,8 +18,8 @@
   margin-bottom: 0px;
 }
 .question {
-  color:white;
-  font-family: 'Montserrat', sans-serif;
+  color:#244761;
+  font-family: "Amatic SC", Helvetica, Arial, sans-serif;
   font-size: 450%;
   align-items: center;
   text-align: center
@@ -39,6 +43,10 @@
   border-radius: 10%;
 }
 
+.button-clicked {
+  color: blue;
+}
+
 .item {
   height: 100%;
 }
@@ -60,9 +68,8 @@
 
 #question-title {
   text-align: center;
-  color: snow;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 400%;  
+  font-family: "Amatic SC", Helvetica, Arial, sans-serif;
+  font-size: 800%;  
 }
 
 #check-list-div {
@@ -76,6 +83,41 @@
 .selected-answer {
   background-color: slateblue;
 }
+
+.navbar {
+  background-color: black;
+}
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px 15px;
+  width: auto;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #b90504;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #FCCE27;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+  color: #b90504;
+}
+
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+  color: white;
+  background-color: #b90504;
+}
+
 
 .fade {
   transition: all 0.4s ease-out;
