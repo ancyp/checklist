@@ -48,30 +48,24 @@ function addQuestions(questionList) {
 function makeQuestionRow(question) {
 
     var a = document.createElement("a");
+    a.setAttribute("href", "questions.html?_id="+question.id);
 
     var row = document.createElement("div");
 
     row.setAttribute("class", "row question-row");
 
     var title = document.createElement("h3");
+    title.setAttribute("class","text-center");
     title.appendChild(document.createTextNode(question.name));
 
     var titleDiv = document.createElement("div");
-    titleDiv.setAttribute("class", "col-lg-5 col-md-5 col-sm-5 col-xs-5 customs-p");
-
-    var viewLink = document.createElement("a");
-    viewLink.setAttribute("class", "medium customs-margin");
-    viewLink.appendChild(document.createTextNode("view"));
-    viewLink.setAttribute("href", "questions.html?_id="+question.id);
-
+    
     var linkDiv =  document.createElement("div");
-    linkDiv.setAttribute("class", "col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-right")
-
-    linkDiv.appendChild(viewLink);
+    
     titleDiv.appendChild(title);
     row.appendChild(titleDiv);
     row.appendChild(linkDiv);
      a.appendChild(row);
-    return row;
+    return a;
 }
 
