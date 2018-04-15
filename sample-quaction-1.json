@@ -47,7 +47,7 @@
         {
             "id" : 2,
             "name" : "Rainy",
-            "resultingQuestionIDs" : [3],
+            "resultingQuestionIDs" : [3, 2],
             "actions" : 
             [
                 "Umbrella"

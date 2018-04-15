@@ -1,5 +1,6 @@
-$(document).ready(function () {
+var dat;
 
+$(document).ready(function () {
     $('#myCarousel').carousel({
         interval: false,
         wrap: false
@@ -9,9 +10,10 @@ $(document).ready(function () {
         $(this).carousel('next');
     });
 
-    var getQuestionsURL = "https://25380aa8-6988-41de-a143-e52a18c3b282.mock.pstmn.io/q"
+    var getQuestionsURL = "https://c063eda5-5d46-4e06-a70d-ee70f739806d.mock.pstmn.io/qq"
     var jqxhr = $.getJSON(getQuestionsURL, function (data) {
         var questions = [];
+        dat = data;
         setTitle(data.name);
         addItemsToCheckList(data.baseActions);
         addQuestions(getQuestions(data), flattenAnswers(data.allAnswers));
@@ -25,9 +27,38 @@ $(document).ready(function () {
 
 function addFromButtonToChecklist() {
     $('#myCarousel').carousel('next');
-    if (this.getAttribute('data-action') === "") { return; }
-    var storedArray = this.getAttribute('data-action').split(",");
-    addItemsToCheckList(storedArray);
+    if (this.getAttribute('data-action') !== "") {
+        var storedArray = this.getAttribute('data-action').split(",");
+        addItemsToCheckList(storedArray);
+    }
+    if (this.getAttribute('data-questions') !== "") {
+        var storedArray = this.getAttribute('data-questions').split(",");
+        appendQuestions(storedArray);
+    }
+
+}
+
+function appendQuestions(quesNumbers) {
+    
+    for (var i = 0; i < quesNumbers.length; i++) {
+
+    }
+    var carousel = document.getElementsByClassName("carousel-inner")[0];
+    var carouselIndicator = document.getElementsByClassName("carousel-indicators")[0];
+    
+    var map = flattenQuestions(dat.allQuestions);
+    var answersMap = flattenAnswers(dat.allAnswers);
+    var ques = [];
+    for (var index in quesNumbers) {
+        ques.push(map[quesNumbers[index]]);
+    }
+
+
+    for (var question in ques) {
+        var itemDiv = makeQuestionDiv(ques[question], answersMap);
+        carousel.appendChild(itemDiv);
+        carouselIndicator.appendChild(makeIndicatorElement(question));
+    }
 }
 
 
@@ -47,7 +78,6 @@ function getQuestions(data) {
     for (var index in arr) {
         ques.push(map[arr[index]]);
     }
-    console.log(ques);
     return ques;
 }
 
@@ -55,7 +85,7 @@ function flattenAnswers(arr) {
     var map = {};
 
     for (var index in arr) {
-        map[arr[index].id] = { "name": arr[index].name, "actions": arr[index].actions };
+        map[arr[index].id] = { "name": arr[index].name, "actions": arr[index].actions, "resultingQuestionIDs": arr[index].resultingQuestionIDs };
     }
     return map;
 }
@@ -163,7 +193,15 @@ function makeOptionsButton(option) {
         actions.push(option.actions[index]);
     }
 
+
+    var ques = [];
+    for (var index = 0; index < option.resultingQuestionIDs.length; index++) {
+        ques.push(option.resultingQuestionIDs[index]);
+    }
+    console.log(ques);
+
     newButton.setAttribute('data-action', actions);
+    newButton.setAttribute('data-questions', ques);
     newButton.onclick = addFromButtonToChecklist;
 
     return newButton;
