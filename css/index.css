@@ -394,11 +394,7 @@ p {
     padding: 0px;
   }
 
-  .navbar-brand>img {
-    height: 100%;
-    padding: 7px 15px;
-    width: auto;
-  }
+  
 
   .navbar-default .navbar-nav>li>a {
     color: #b90504;
@@ -425,7 +421,7 @@ p {
 /* Carousel Styles */
 .question-row {
     padding: 20px 0px;
-    background-color: #a8deff;
+    background-color: #66BDB3;
     box-shadow: 5px 5px #888888;
     margin-bottom: 10px;
     margin-left: 5%;
